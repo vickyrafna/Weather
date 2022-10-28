@@ -153,7 +153,7 @@
                 <h3>Monday,26 September 2022</h3>
         </div>
 	    <div>
-		     <button class="" id="Cuurent Location></button>
+		     <button class="" id="Current Location></button>
 	    </div>
 	   
         
@@ -302,125 +302,6 @@
               }else {
                 alert("Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+"+city);
               }  */
-
-			  
-			  //Features 1
-              let now = new Date ();
-              let h5 = document.querySelector("h5");
-			  h5.innerHTML = formatDate(now);
-
-              
-              let hours = now.getHours();			  
-              let minutes = now.getMinutes();			 
-			  
-                            
-			
-              function formatDate(today) {
-               let currentDay = today.getDay();
-               let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
-                 let day = days[currentDay];
-
-                  let hours = today.getHours();
-                   if (hours < 10) {
-                    hours = `0${hours}`;
-                 }
-                 let minutes = today.getMinutes();
-                if (minutes < 10) {
-                    minutes = `0${minutes}`;
-                }
-                return `${day} ${hours}:${minutes}`;
-                }
-								
-				
-                let today = new Date();
-                let date = document.querySelector(".date");			
-                date.innerHTML = formatDate(today);
-				
-				
-				//Print a country name from submitted form
-				
-				function printCity(event){
-					event.preventDefault();
-					let cname = document.querySelector(".cname");
-					let cnameprint = document.querySelector(".cnameprint");			
-					cnameprint.innerHTML = cname.value;
-				}
-
-				
-				
-				function findHere1(event) {
-					event.preventDefault();
-					let city = document.querySelector(".form-control"); 
-					let town = document.querySelector(".town1");
-					let tempD = document.querySelector(".tempD");
-					let tempF = document.querySelector(".tempF");
-					let humidity = document.querySelector(".humidity"); 
-					let today = new Date();
-					let date = document.querySelector(".date1");				
-               
-					city = city.value.toLowerCase();
-					
-					if(city=="paris") {
-						town.innerHTML = city.charAt(0).toUpperCase()+ city.slice(1);
-						tempD.innerHTML = Math.round(weather.paris.temp)+"°C";
-						humidity.innerHTML = Math.round(weather.paris.humidity)+"%";
-						console.log(formatDate(today));
-						 date.innerHTML = formatDate(today);
-						 tempF.innerHTML="";
-					} else if (city=="tokyo"){
-						town.innerHTML = city.charAt(0).toUpperCase()+ city.slice(1);
-						tempD.innerHTML = Math.round(weather.tokyo.temp)+"°C";
-						humidity.innerHTML = Math.round(weather.tokyo.humidity)+"%";
-						console.log(formatDate(today));
-						date.innerHTML = formatDate(today);
-						tempF.innerHTML="";
-					}else if (city=="lisbon"){
-						town.innerHTML = city.charAt(0).toUpperCase()+ city.slice(1);
-						tempD.innerHTML = Math.round(weather.lisbon.temp)+"°C";						
-						humidity.innerHTML = Math.round(weather.lisbon.humidity)+"%";
-						date.innerHTML = formatDate(today);
-						tempF.innerHTML="";
-					} else if (city === "san francisco") {
-						town.innerHTML = city.charAt(0).toUpperCase()+"an " + city.charAt(4).toUpperCase()+ city.slice(5);
-						tempD.innerHTML = Math.round(weather["san francisco"].temp)+"°C";						
-						humidity.innerHTML = Math.round(weather["san francisco"].humidity)+"%";
-						date.innerHTML = formatDate(today);
-						tempF.innerHTML="";
-					} else if (city==="oslo"){
-						town.innerHTML = city.charAt(0).toUpperCase()+ city.slice(1);
-						tempD.innerHTML = Math.round(weather.oslo.temp)+"°C";						
-						humidity.innerHTML = Math.round(weather.oslo.humidity)+"%";
-						date.innerHTML = formatDate(today);
-						tempF.innerHTML="";
-                   }else {
-					alert("Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+"+city);
-				  }
-                }
-					
-			function celsuisToFahrenheit(degreecelcuis){
-					let tempD = document.querySelector(".tempD");
-					degreecelcuis = tempD.innerHTML.slice(0, -2);
-					let fahrenheit = degreecelcuis * 9 / 5 + 32;
-					let tempF = document.querySelector(".tempF");
-					tempF.innerHTML = fahrenheit +"°F";
-				}
-				
-				
-				var x = document.getElementById("positionLatLong");
-
-			function getLocation() {
-			 // if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition);
-			/*  } else { 
-				x.innerHTML = "Geolocation is not supported by this browser.";
-			  }*/
-			}
-
-			function showPosition(position) {
-			  x.innerHTML = "Latitude: " + position.coords.latitude + 
-			  "<br>Longitude: " + position.coords.longitude;
-			}
 			
 
 			
